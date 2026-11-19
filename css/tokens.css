@@ -1,0 +1,111 @@
+/* Readly — tokens. Fuente: DESIGN (2).md ("botanical greenhouse on cream paper"), adaptado a móvil. */
+:root {
+  /* Primitivos */
+  --forest-ink: #0f3e17;
+  --forest-shadow: #0c2f10;
+  --cream: #fffefc;
+  --keylime: #e1f4df;
+  --mint: #cfe7d3;
+  --sage: #b1dbb8;
+  --slate: #b6ced5;
+  --charcoal: #222222;
+  --border-mist: #efeeeb;
+
+  /* Semánticos (tema claro) */
+  --bg: var(--cream);
+  --surface-1: var(--keylime);
+  --surface-2: var(--mint);
+  --surface-3: var(--sage);
+  --surface-4: var(--slate);
+  --text: var(--forest-ink);
+  --text-2: #3d5a40;            /* 7.2:1 sobre crema */
+  --line: var(--border-mist);
+  --rail: var(--keylime);
+  --accent: var(--forest-ink);
+  --on-accent: var(--cream);
+  --accent-hover: var(--forest-shadow);
+  --danger: #8a2a1c;
+  --focus: var(--forest-ink);
+
+  /* Estado → superficie */
+  --st-leyendo: var(--sage);
+  --st-por_leer: var(--keylime);
+  --st-leido: var(--mint);
+  --st-abandonado: var(--slate);
+
+  /* Tipografía */
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-caption: 0.75rem;
+  --fs-body: 0.9375rem;
+  --fs-sub: 1.125rem;
+  --fs-h3: 1.5rem;
+  --fs-h2: 1.875rem;
+  --fs-h1: 2.25rem;
+  --fs-display: 3rem;
+
+  /* Espacio y forma */
+  --s-4: 4px; --s-7: 7px; --s-9: 9px; --s-11: 11px; --s-14: 14px; --s-18: 18px;
+  --s-21: 21px; --s-28: 28px; --s-35: 35px; --s-42: 42px; --s-56: 56px;
+  --radius: 14px;
+  --radius-sm: 7px;
+  --radius-pill: 999px;
+  --tap: 44px;
+
+  /* Layout */
+  --nav-h: 64px;
+  --header-h: 56px;
+  --fab: 56px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+  --maxw: 1080px;
+
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  color-scheme: light;
+}
+
+/* Tema oscuro: verde muy oscuro con texto crema; las capas suben en luminosidad. */
+:root[data-theme="dark"] {
+  --bg: #0b2510;
+  --surface-1: #11331a;
+  --surface-2: #174020;
+  --surface-3: #1f4f2a;
+  --surface-4: #22404a;
+  --text: var(--cream);
+  --text-2: #c4d9c6;
+  --line: #1f3d25;
+  --rail: #1f4f2a;
+  --accent: var(--sage);
+  --on-accent: var(--forest-shadow);
+  --accent-hover: var(--mint);
+  --danger: #f0a596;
+  --focus: var(--sage);
+  --st-leyendo: #1f4f2a;
+  --st-por_leer: #11331a;
+  --st-leido: #174020;
+  --st-abandonado: #22404a;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    --bg: #0b2510;
+    --surface-1: #11331a;
+    --surface-2: #174020;
+    --surface-3: #1f4f2a;
+    --surface-4: #22404a;
+    --text: var(--cream);
+    --text-2: #c4d9c6;
+    --line: #1f3d25;
+    --rail: #1f4f2a;
+    --accent: var(--sage);
+    --on-accent: var(--forest-shadow);
+    --accent-hover: var(--mint);
+    --danger: #f0a596;
+    --focus: var(--sage);
+    --st-leyendo: #1f4f2a;
+    --st-por_leer: #11331a;
+    --st-leido: #174020;
+    --st-abandonado: #22404a;
+    color-scheme: dark;
+  }
+}

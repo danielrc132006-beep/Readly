@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- CSP: si cambias el script del tema (abajo), recalcula su sha256. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-cqKjI2BZk2R3KOzex0q0H5zwHQ6hyoRerNtVT/qjcxI='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://openlibrary.org https://www.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Readly</title>
+  <meta name="description" content="Tu registro personal de lecturas, notas y reseñas.">
+  <meta name="theme-color" content="#fffefc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b2510" media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Readly">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script>try{var t=JSON.parse(localStorage.getItem('readly:settings')||'{}').tema;document.documentElement.dataset.theme=t==='oscuro'?'dark':t==='claro'?'light':'auto'}catch(e){}</script>
+</head>
+<body>
+  <a class="sr-only" href="#view">Saltar al contenido</a>
+  <header class="app-header">
+    <a class="app-header__brand" href="#/inicio" aria-label="Readly, inicio"><img src="favicon.svg" alt="" width="28" height="28"><span>Readly</span></a>
+    <span class="sync-state" id="sync-state" role="status" aria-live="polite"></span>
+    <a class="icon-btn" href="#/ajustes" aria-label="Ajustes"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#ajustes"/></svg></a>
+  </header>
+
+  <nav class="tabbar" aria-label="Secciones">
+    <a href="#/inicio" data-tab="inicio"><span class="tabbar__pip"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#inicio"/></svg></span>Inicio</a>
+    <a href="#/biblioteca" data-tab="biblioteca"><span class="tabbar__pip"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#biblioteca"/></svg></span>Biblioteca</a>
+    <a href="#/notas" data-tab="notas"><span class="tabbar__pip"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#notas"/></svg></span>Notas</a>
+    <a href="#/estadisticas" data-tab="estadisticas"><span class="tabbar__pip"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#estadisticas"/></svg></span>Estadísticas</a>
+  </nav>
+
+  <main class="main" id="view" tabindex="-1"></main>
+
+  <a class="fab" id="fab" href="#/libro/nuevo" aria-label="Agregar libro"><svg class="icon" aria-hidden="true"><use href="icons/sprite.svg#agregar"/></svg></a>
+
+  <noscript><p class="main">Readly necesita JavaScript.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
