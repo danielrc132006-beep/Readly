@@ -1,5 +1,5 @@
 // Sube CACHE_VERSION en cada despliegue para que los teléfonos reciban la versión nueva.
-const CACHE_VERSION = 'readly-v1';
+const CACHE_VERSION = 'readly-v2';
 const COVERS = 'readly-covers';
 const MAX_COVERS = 150;
 

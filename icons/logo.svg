@@ -1,16 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f3e17"/><stop offset="1" stop-color="#b1dbb8"/></linearGradient>
-    <linearGradient id="rb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f3e17"/><stop offset="1" stop-color="#3f7d4b"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d8eff"/><stop offset=".55" stop-color="#0068f9"/><stop offset="1" stop-color="#024bb1"/></linearGradient>
+    <radialGradient id="glow" cx="1" cy="1" r=".75"><stop offset="0" stop-color="#6736eb" stop-opacity=".75"/><stop offset="1" stop-color="#6736eb" stop-opacity="0"/></radialGradient>
+    <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#faf9f7"/></linearGradient>
   </defs>
-  <rect width="512" height="512" fill="url(#bg)"/>
-  <g fill="#e1f4df" fill-opacity=".45" transform="translate(0 -26)">
+  <rect width="512" height="512" fill="url(#bg)"/><rect width="512" height="512" fill="url(#glow)"/>
+  <g fill="#d5ecff" fill-opacity=".35" transform="translate(0 -24)">
     <path d="M252 196C220 177 178 171 142 174Q132 175 132 185V338Q132 348 142 347C178 344 220 350 252 368Z"/>
     <path d="M260 196C292 177 334 171 370 174Q380 175 380 185V338Q380 348 370 347C334 344 292 350 260 368Z"/>
   </g>
-  <g fill="#fffefc">
+  <g fill="url(#pg)">
     <path d="M252 196C220 177 178 171 142 174Q132 175 132 185V338Q132 348 142 347C178 344 220 350 252 368Z"/>
     <path d="M260 196C292 177 334 171 370 174Q380 175 380 185V338Q380 348 370 347C334 344 292 350 260 368Z"/>
   </g>
-  <path d="M306 168h32v100l-16-15-16 15z" fill="url(#rb)"/>
+  <g stroke="#d6e4f1" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M164 220c26-2 50 2 68 10M164 252c26-2 50 2 68 10M164 284c26-2 50 2 68 10"/>
+  </g>
+  <path d="M306 168h32v100l-16-15-16 15z" fill="#6736eb"/>
 </svg>
