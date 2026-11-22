@@ -1,5 +1,5 @@
 // Sube CACHE_VERSION en cada despliegue para que los teléfonos reciban la versión nueva.
-const CACHE_VERSION = 'readly-v3';
+const CACHE_VERSION = 'readly-v4';
 const COVERS = 'readly-covers';
 const MAX_COVERS = 150;
 
@@ -16,7 +16,8 @@ const SHELL = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE_VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // cache: 'reload' ignora la caché HTTP del navegador y baja siempre la versión publicada.
+  e.waitUntil(caches.open(CACHE_VERSION).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
