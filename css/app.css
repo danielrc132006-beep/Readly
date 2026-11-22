@@ -38,7 +38,7 @@ p { margin: 0; }
   display: flex; align-items: center; gap: var(--s-11);
   min-height: calc(var(--header-h) + var(--safe-t));
   padding: var(--safe-t) var(--s-11) 0 var(--s-18);
-  background: color-mix(in srgb, var(--chrome) 88%, transparent);
+  background: var(--chrome);
   -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -60,7 +60,7 @@ p { margin: 0; }
   position: fixed; inset: auto 0 0 0; z-index: 30;
   display: grid; grid-template-columns: repeat(4, 1fr);
   height: calc(var(--nav-h) + var(--safe-b)); padding: 6px var(--s-9) var(--safe-b);
-  background: color-mix(in srgb, var(--chrome) 92%, transparent);
+  background: var(--chrome);
   -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px);
   border-top: 1px solid var(--line);
 }

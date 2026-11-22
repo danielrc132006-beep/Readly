@@ -84,6 +84,13 @@ addEventListener('online', () => api.sync());
 addEventListener('offline', () => api.sync());
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') api.sync(); });
 
+// La barra del sistema (hora, batería) toma el color de la cabecera, así se ven como un solo bloque.
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const syncThemeColor = () => { themeMeta.content = getComputedStyle(document.documentElement).getPropertyValue('--chrome').trim() || '#ffffff'; };
+new MutationObserver(syncThemeColor).observe(document.documentElement, { attributeFilter: ['data-theme'] });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncThemeColor);
+syncThemeColor();
+
 // En desarrollo (localhost) el SW se activa solo con localStorage 'readly:sw' = '1', para no servir archivos viejos.
 const devHost = ['localhost', '127.0.0.1'].includes(location.hostname);
 let swOn = !devHost;
